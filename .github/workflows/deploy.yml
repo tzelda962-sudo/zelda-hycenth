@@ -25,16 +25,14 @@ jobs:
       - name: Generate Static Site
         run: npm run generate
 
-      - name: Deploy to Hostinger via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./.output/public/
-          server-dir: ./domains/zeldaandhycenth.com/public_html/
-          protocol: ftps
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
+      - name: Deploy to Hostinger via LFTP
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lftp
+          lftp -c "
+          set ftp:ssl-allow yes; 
+          set ssl:verify-certificate no; 
+          open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }}; 
+          mkdir -p domains/zeldaandhycenth.com/public_html; 
+          mirror -R -v --parallel=4 --exclude .git/ --exclude .gitattributes --exclude .gitignore ./.output/public/ domains/zeldaandhycenth.com/public_html/
+          "
