@@ -64,14 +64,21 @@ Instead of manually uploading files, you can use GitHub Actions to automatically
 2.  Click on **Settings** > **Secrets and variables** > **Actions**.
 3.  Click **New repository secret** and add the following three secrets:
 
-    | Name           | Value                                                    |
-    | :------------- | :------------------------------------------------------- |
-    | `FTP_SERVER`   | Your Hostinger FTP hostname (e.g., `ftp.yourdomain.com`) |
-    | `FTP_USERNAME` | Your FTP Username (e.g., `u123456789`)                   |
-    | `FTP_PASSWORD` | Your FTP Password                                        |
+    | Name           | Value                                                                         |
+    | :------------- | :---------------------------------------------------------------------------- |
+    | `FTP_SERVER`   | Your Hostinger FTP IP (e.g., `185.185.185.185`). **Do not include `ftp://`**. |
+    | `FTP_USERNAME` | Your FTP Username (e.g., `u123456789`)                                        |
+    | `FTP_PASSWORD` | Your FTP Password                                                             |
 
 ## 3. Trigger Deployment
 
 1.  Push a change to the `main` branch.
 2.  Go to the **Actions** tab in your GitHub repository to see the deployment progress.
 3.  Once the "Deploy to Hostinger" workflow turns green, your site is live!
+
+## Troubleshooting CI/CD
+
+- **Error: `getaddrinfo ENOTFOUND`**: This means GitHub Actions cannot find your FTP server.
+  - **Solution**: In your GitHub Repository Settings > Secrets, update `FTP_SERVER` to use the **FTP IP Address** (e.g., `185.185.185.185`) instead of the domain name. The domain might not be propagating yet.
+- **Error: `Timeout` or `Connection refused`**:
+  - **Solution**: Ensure you are using the correct Port (usually 21) and checking if Hostinger is blocking the connection. Using the IP address usually fixes this too.

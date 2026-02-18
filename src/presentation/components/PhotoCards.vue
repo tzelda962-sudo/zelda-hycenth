@@ -18,12 +18,12 @@ const props = defineProps<{
     >
       <div class="w-full h-[75%] overflow-hidden mb-2">
         <img
-          src="/images/original/photo-sunset.jpg"
+          src="/images/generated/photo-couple-beach.png"
           class="w-full h-full object-cover"
         />
       </div>
       <p class="font-handwriting text-center text-gray-800 text-xl font-bold">
-        Kribi, Cmr
+        Böblingen
       </p>
     </div>
 
@@ -39,12 +39,12 @@ const props = defineProps<{
     >
       <div class="w-full h-[75%] overflow-hidden mb-2">
         <img
-          src="/images/original/photo-couple.jpg"
+          src="/images/generated/photo-couple-symbolic.png"
           class="w-full h-full object-cover"
         />
       </div>
       <p class="font-handwriting text-center text-gray-800 text-xl font-bold">
-        Erica + Mictor
+        Zelda + Hycenth
       </p>
     </div>
   </div>

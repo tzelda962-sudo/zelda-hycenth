@@ -17,16 +17,18 @@ const { isOpen } = storeToRefs(store);
         alt="Background"
         class="w-full h-full object-cover opacity-100"
       />
-      <!-- Reduced overlay opacity to let the beach show through more -->
-      <div class="absolute inset-0 bg-blue-900/10 mix-blend-overlay"></div>
     </div>
 
     <!-- Main Content Container -->
-    <div class="relative z-10 w-full min-h-screen flex flex-col pt-24">
+    <div
+      class="relative z-10 w-full flex flex-col pt-32 transition-all duration-1000"
+      :class="isOpen ? 'min-h-screen' : 'h-screen overflow-hidden'"
+    >
       <!-- Envelope Section -->
       <!-- Center the envelope specifically -->
       <div
-        class="w-full flex justify-center relative z-40 transition-all duration-1000 ease-in-out"
+        class="w-full flex-grow flex items-center justify-center relative z-40 transition-all duration-1000 ease-in-out"
+        :class="{ 'mb-12': isOpen }"
       >
         <Envelope />
       </div>
@@ -36,8 +38,9 @@ const { isOpen } = storeToRefs(store);
       <div
         class="relative w-full transition-all duration-1000 delay-500"
         :class="{
-          'opacity-0 translate-y-20 pointer-events-none': !isOpen,
-          'opacity-100 translate-y-0': isOpen,
+          'opacity-0 translate-y-20 pointer-events-none absolute bottom-0':
+            !isOpen,
+          'opacity-100 translate-y-0 relative': isOpen,
         }"
       >
         <MainInvitationContent />

@@ -14,7 +14,7 @@ const toggleOpen = () => {
 </script>
 
 <template>
-  <div class="relative flex items-center justify-center pt-32 pb-32">
+  <div class="relative flex items-center justify-center pt-24 pb-24">
     <!-- Envelope Container -->
     <!-- Envelope Container -->
     <!-- Reverted size to original (600px desktop) -->
@@ -35,6 +35,8 @@ const toggleOpen = () => {
       <!-- Z-30 to be in front of envelopes (z-10/z-20) but behind cards (z-40) -->
       <!-- Moves INWARD (positive translate) when open -->
       <!-- Rotation moved to parent so both images rotate together as a unit -->
+      <!-- Flowers (Behind - Top Left) -->
+      <!-- Adjusted for new assets -->
       <div
         class="absolute -top-48 -left-12 w-24 md:w-40 z-30 transition-all duration-1000 pointer-events-none origin-center"
         :class="
@@ -44,12 +46,9 @@ const toggleOpen = () => {
         "
       >
         <img
-          src="/images/original/floral-top-left.png"
+          src="/images/generated/floral-corner-navy.png"
           class="w-full h-full object-contain"
-        />
-        <img
-          src="/images/original/flower-top-right-base.png"
-          class="w-full translate-y-[-90px] translate-x-[-20px] h-full object-contain"
+          alt="Navy Floral Decor"
         />
       </div>
 
@@ -78,27 +77,15 @@ const toggleOpen = () => {
       </div>
 
       <!-- Flowers (Front - Bottom Right) -->
-      <!-- Visible in both states, snug positioning -->
-      <!-- Z-30 to be in front of envelopes -->
-      <!-- Bottom moved MUCH lower (translate-y-48) as requested -->
+      <!-- Adjusted for new assets -->
       <div
         class="absolute -bottom-8 -right-8 w-28 md:w-48 z-30 transition-all duration-1000 delay-200 pointer-events-none origin-center flex items-center justify-center"
         :class="isOpen ? '-translate-x-10 translate-y-48' : 'translate-0'"
       >
-        <!-- Bouquet Background: 2x Top-Left Flowers rotated apart -->
         <img
-          src="/images/original/floral-top-left.png"
-          class="absolute w-full h-full object-contain transform -rotate-45 -translate-x-6 scale-90"
-        />
-        <img
-          src="/images/original/floral-top-left.png"
-          class="absolute w-full h-full object-contain transform rotate-12 translate-x-4 scale-90"
-        />
-
-        <!-- Foreground: Original Bottom-Right Flower -->
-        <img
-          src="/images/original/floral-bottom-right.png"
-          class="relative z-10 w-full h-full object-contain"
+          src="/images/generated/floral-corner-navy.png"
+          class="relative z-10 w-full h-full object-contain transform rotate-180"
+          alt="Navy Floral Decor"
         />
       </div>
 
