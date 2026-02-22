@@ -13,7 +13,7 @@ const { isOpen } = storeToRefs(store);
     <!-- Fixed Background -->
     <div class="absolute top-0 left-0 w-full h-screen z-0">
       <img
-        src="/images/original/beach-background.jpg"
+        src="/images/generated/summer_wedding_bg.png"
         alt="Background"
         class="w-full h-full object-cover opacity-100"
       />

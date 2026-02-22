@@ -15,7 +15,9 @@
       </p>
       <p class="text-lg md:text-xl font-light max-w-3xl mx-auto mb-8">
         Contact our planners on
-        <span class="font-bold">+491784377896, +4915236345161</span>
+        <span class="font-bold"
+          >+491784377896, +4915236345161, +4917683170259</span
+        >
       </p>
 
       <a

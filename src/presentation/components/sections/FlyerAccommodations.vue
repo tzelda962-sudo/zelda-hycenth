@@ -87,8 +87,12 @@
         <p
           class="font-serif text-lg md:text-xl leading-relaxed italic text-[#A87D3B]"
         >
-          Please ensure to book by July 10th, 2026 to secure the special group
-          rate.
+          Please ensure to book by
+          <span
+            class="font-bold underline decoration-dotted text-[#152146] hover:text-[#A87D3B] transition-colors"
+            >July 10th, 2026</span
+          >
+          to secure the special group rate.
         </p>
       </div>
     </div>
