@@ -19,7 +19,7 @@ const props = defineProps<{
       <div class="w-full h-[75%] overflow-hidden mb-2">
         <img
           src="/images/original/unnamed.jpg"
-          class="w-full h-full object-cover"
+          class="w-full h-full object-contain"
         />
       </div>
       <p class="font-handwriting text-center text-gray-800 text-xl font-bold">
