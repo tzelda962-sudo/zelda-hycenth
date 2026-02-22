@@ -70,8 +70,8 @@ const toggleOpen = () => {
           class="absolute top-[75%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20"
         >
           <img
-            src="/images/original/wax-seal.png"
-            class="w-12 md:w-16 opacity-90 drop-shadow-md"
+            src="/images/generated/custom_wax_seal_zh.png"
+            class="w-12 md:w-16 opacity-90 drop-shadow-md rounded-full overflow-hidden mix-blend-multiply"
           />
         </div>
       </div>
@@ -133,8 +133,8 @@ const toggleOpen = () => {
             class="absolute top-[55%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 hover:scale-105 transition-transform"
           >
             <img
-              src="/images/original/wax-seal.png"
-              class="w-24 md:w-32 drop-shadow-lg"
+              src="/images/generated/custom_wax_seal_zh.png"
+              class="w-24 md:w-32 drop-shadow-lg rounded-full overflow-hidden mix-blend-multiply"
             />
           </div>
 
@@ -143,7 +143,7 @@ const toggleOpen = () => {
             class="absolute bottom-[-60px] md:bottom-[-80px] left-1/2 transform -translate-x-1/2 w-full text-center"
           >
             <p
-              class="font-handwriting text-3xl md:text-5xl text-[#893049] animate-pulse drop-shadow-sm font-bold"
+              class="font-handwriting text-3xl md:text-5xl text-[#A87D3B] animate-pulse drop-shadow-sm font-bold"
             >
               Click to Open
             </p>
