@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-full mt-8 mb-16">
+  <div class="relative w-full mt-8 mb-16 pt-16 md:pt-24">
     <!-- Asymmetric Floral Cluster -->
     <div
       class="absolute -top-24 -left-16 md:-left-4 w-64 md:w-96 pointer-events-none z-30 transform -rotate-12"
