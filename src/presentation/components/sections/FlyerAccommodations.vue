@@ -1,3 +1,9 @@
+<script setup lang="ts">
+import { useSiteContent } from "../../../composables/useSiteContent";
+
+const { getContent } = useSiteContent();
+</script>
+
 <template>
   <section class="w-full py-16 md:py-32 px-6 md:px-12">
     <div
@@ -12,7 +18,12 @@
           class="w-full h-full rounded-[3rem] overflow-hidden shadow-xl z-10 relative bg-white"
         >
           <img
-            src="/images/generated/accommodations-luggage.png"
+            :src="
+              getContent(
+                'image_accommodations',
+                '/images/generated/accommodations-luggage.png',
+              )
+            "
             alt="Luggage"
             class="w-full h-full object-cover opacity-90"
           />
@@ -90,7 +101,7 @@
           Please ensure to book by
           <span
             class="font-bold underline decoration-dotted text-[#152146] hover:text-[#A87D3B] transition-colors"
-            >July 10th, 2026</span
+            >{{ getContent("accommodation_deadline", "July 10th, 2026") }}</span
           >
           to secure the special group rate.
         </p>

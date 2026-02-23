@@ -2,9 +2,11 @@
 import { useInvitationStore } from "../state/invitationStore";
 import { storeToRefs } from "pinia";
 import PhotoCards from "./PhotoCards.vue";
+import { useSiteContent } from "../../composables/useSiteContent";
 
 const store = useInvitationStore();
 const { isOpen } = storeToRefs(store);
+const { getContent } = useSiteContent();
 
 const toggleOpen = () => {
   if (!isOpen.value) {
@@ -70,7 +72,12 @@ const toggleOpen = () => {
           class="absolute top-[75%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20"
         >
           <img
-            src="/images/generated/custom_wax_seal_zh.png"
+            :src="
+              getContent(
+                'image_wax_seal',
+                '/images/generated/custom_wax_seal_zh.png',
+              )
+            "
             class="w-12 md:w-16 opacity-90 drop-shadow-md rounded-full overflow-hidden mix-blend-multiply"
           />
         </div>
@@ -137,7 +144,12 @@ const toggleOpen = () => {
             class="absolute top-[55%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 hover:scale-105 transition-transform"
           >
             <img
-              src="/images/generated/custom_wax_seal_zh.png"
+              :src="
+                getContent(
+                  'image_wax_seal',
+                  '/images/generated/custom_wax_seal_zh.png',
+                )
+              "
               class="w-24 md:w-32 drop-shadow-lg rounded-full overflow-hidden mix-blend-multiply"
             />
           </div>

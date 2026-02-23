@@ -1,7 +1,11 @@
 <script setup lang="ts">
-const props = defineProps<{
+import { useSiteContent } from "../../composables/useSiteContent";
+
+defineProps<{
   isOpen: boolean;
 }>();
+
+const { getContent } = useSiteContent();
 </script>
 
 <template>
@@ -18,7 +22,7 @@ const props = defineProps<{
     >
       <div class="w-full h-[75%] overflow-hidden mb-2">
         <img
-          src="/images/generated/original.jpeg"
+          :src="getContent('image_couple', '/images/generated/original.jpeg')"
           class="w-full h-full object-contain"
           alt="Couple Photo"
         />

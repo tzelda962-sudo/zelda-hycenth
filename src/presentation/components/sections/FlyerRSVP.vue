@@ -1,3 +1,9 @@
+<script setup lang="ts">
+import { useSiteContent } from "../../../composables/useSiteContent";
+
+const { getContent } = useSiteContent();
+</script>
+
 <template>
   <div
     class="w-full bg-repeat text-[#152146] font-serif relative py-16 md:py-32 px-6 md:px-16"
@@ -24,9 +30,13 @@
 
       <p class="text-lg md:text-xl font-light max-w-3xl mx-auto mt-4">
         For questions before or during the wedding, contact
-        <span class="font-bold"
-          >+491784377896, +4915236345161, +4917683170259</span
-        >
+        <span class="font-bold">{{
+          getContent("rsvp_contacts", [
+            "+491784377896",
+            "+4915236345161",
+            "+4917683170259",
+          ]).join(", ")
+        }}</span>
       </p>
     </div>
   </div>
