@@ -79,8 +79,12 @@ const toggleOpen = () => {
       <!-- Flowers (Front - Bottom Right) -->
       <!-- Adjusted for new assets -->
       <div
-        class="absolute bottom-0 md:-bottom-8 -right-4 md:-right-8 w-28 md:w-48 z-30 transition-all duration-1000 delay-200 pointer-events-none origin-center flex items-center justify-center"
-        :class="isOpen ? '-translate-x-10 translate-y-48' : 'translate-0'"
+        class="absolute bottom-4 md:-bottom-8 -right-4 md:-right-8 w-28 md:w-48 z-30 transition-all duration-1000 delay-200 pointer-events-none origin-center flex items-center justify-center"
+        :class="
+          isOpen
+            ? '-translate-x-10 translate-y-24 md:translate-y-48'
+            : 'translate-0'
+        "
       >
         <img
           src="/images/generated/floral-corner-navy.png"
