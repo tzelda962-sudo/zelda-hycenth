@@ -19,13 +19,13 @@ const { getContent } = useSiteContent();
         class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-12"
       >
         <h1 class="font-handwriting text-7xl md:text-9xl text-[#152146]">
-          Zelda
+          {{ getContent("couple_name_1", "Zelda") }}
         </h1>
         <span class="font-handwriting text-5xl md:text-7xl text-[#A87D3B]">
           &amp;
         </span>
         <h1 class="font-handwriting text-7xl md:text-9xl text-[#152146]">
-          Hycenth
+          {{ getContent("couple_name_2", "Hycenth") }}
         </h1>
       </div>
     </div>
@@ -35,8 +35,12 @@ const { getContent } = useSiteContent();
       <p
         class="font-serif text-[#A87D3B] text-lg md:text-xl uppercase leading-relaxed tracking-wider border-t border-b border-[#152146]/20 py-4"
       >
-        You are invited to join us in celebrating our 16th Wedding Anniversary
-        and Church Blessings
+        {{
+          getContent(
+            "invitation_subtitle",
+            "You are invited to join us in celebrating our 16th Wedding Anniversary and Church Blessings",
+          )
+        }}
       </p>
     </div>
   </div>

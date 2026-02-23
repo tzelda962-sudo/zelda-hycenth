@@ -14,13 +14,22 @@ const { getContent } = useSiteContent();
         RSVP
       </h3>
       <p class="text-xl md:text-2xl font-bold italic mb-6 text-[#A87D3B]">
-        This event is strictly on invitation.
+        {{
+          getContent("rsvp_note_top", "This event is strictly on invitation.")
+        }}
       </p>
       <p class="text-lg md:text-xl mb-4 max-w-2xl mx-auto">
-        Kindly respond with your attendance and guest count by 30.06.2026.
+        {{
+          getContent(
+            "rsvp_note_bottom",
+            "Kindly respond with your attendance and guest count by 30.06.2026.",
+          )
+        }}
       </p>
       <a
-        href="https://forms.gle/Gf8Mvt7DMgfpYNLBA"
+        :href="
+          getContent('rsvp_link_url', 'https://forms.gle/Gf8Mvt7DMgfpYNLBA')
+        "
         target="_blank"
         rel="noopener noreferrer"
         class="inline-block px-10 py-4 mb-8 bg-[#152146] text-[#F6F7EC] font-serif uppercase tracking-widest hover:bg-[#A87D3B] hover:text-[#152146] transition-all duration-300 transform hover:-translate-y-1 shadow-xl"

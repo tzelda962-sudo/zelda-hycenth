@@ -62,34 +62,75 @@ const { getContent } = useSiteContent();
           Accommodations
         </h3>
         <p class="font-serif text-lg md:text-xl leading-relaxed mb-6">
-          We have reserved a block of rooms at the
+          {{
+            getContent(
+              "accommodation_text_1",
+              "We have reserved a block of rooms at the",
+            )
+          }}
           <a
-            href="https://maps.app.goo.gl/oA76uMpyKpZTcb5B9"
+            :href="
+              getContent(
+                'accommodation_hotel_url',
+                'https://maps.app.goo.gl/oA76uMpyKpZTcb5B9',
+              )
+            "
             target="_blank"
             class="font-bold hover:text-[#A87D3B] transition-colors underline decoration-dotted"
           >
-            Eleya Hotels Böblingen
+            {{
+              getContent("accommodation_hotel_name", "Eleya Hotels Böblingen")
+            }}
           </a>
-          for your convenience.
+          {{ getContent("accommodation_text_2", "for your convenience.") }}
         </p>
 
         <!-- Address & Contact -->
         <div class="mb-6 font-serif text-base md:text-lg opacity-90">
-          <p>Otto-Lilienthal-Straße 18, 71034 Böblingen</p>
+          <p>
+            {{
+              getContent(
+                "accommodation_address",
+                "Otto-Lilienthal-Straße 18, 71034 Böblingen",
+              )
+            }}
+          </p>
           <div class="mt-4 space-y-1">
-            <p><span class="font-bold">Booking Code:</span> Ndah</p>
+            <p>
+              <span class="font-bold">Booking Code:</span>
+              {{ getContent("accommodation_booking_code", "Ndah") }}
+            </p>
             <p>
               <span class="font-bold">Tel:</span>
-              <a href="tel:+497031677990" class="hover:underline"
-                >+49 7031 67799 0</a
+              <a
+                :href="
+                  'tel:' +
+                  getContent('accommodation_phone', '+49 7031 67799 0').replace(
+                    /\s+/g,
+                    '',
+                  )
+                "
+                class="hover:underline"
+                >{{ getContent("accommodation_phone", "+49 7031 67799 0") }}</a
               >
             </p>
             <p>
               <span class="font-bold">Email:</span>
               <a
-                href="mailto:stuttgart-boeblingen@elaya-hotels.com"
+                :href="
+                  'mailto:' +
+                  getContent(
+                    'accommodation_email',
+                    'stuttgart-boeblingen@elaya-hotels.com',
+                  )
+                "
                 class="hover:underline"
-                >stuttgart-boeblingen@elaya-hotels.com</a
+                >{{
+                  getContent(
+                    "accommodation_email",
+                    "stuttgart-boeblingen@elaya-hotels.com",
+                  )
+                }}</a
               >
             </p>
           </div>

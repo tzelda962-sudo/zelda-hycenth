@@ -1,3 +1,9 @@
+<script setup lang="ts">
+import { useSiteContent } from "../../../composables/useSiteContent";
+
+const { getContent } = useSiteContent();
+</script>
+
 <template>
   <section
     class="py-24 relative text-white bg-cover bg-center w-full"
@@ -55,24 +61,48 @@
 
           <!-- Event Details -->
           <div class="pt-2 px-4">
-            <p class="font-serif text-2xl italic mb-1">18:00</p>
+            <p class="font-serif text-2xl italic mb-1">
+              {{ getContent("timeline_1_time", "18:00") }}
+            </p>
             <p class="font-serif text-xl uppercase tracking-widest mb-4">
-              Meet & Greet
+              {{ getContent("timeline_1_title", "Meet & Greet") }}
             </p>
             <a
-              href="https://maps.app.goo.gl/74erQitRL1ZEgh5j8"
+              :href="
+                getContent(
+                  'timeline_1_url',
+                  'https://maps.app.goo.gl/74erQitRL1ZEgh5j8',
+                )
+              "
               target="_blank"
               class="flex flex-col items-center gap-1 opacity-90 hover:opacity-100 hover:text-white transition-colors group"
             >
               <p
                 class="font-serif italic text-lg leading-snug group-hover:underline"
               >
-                Katholische Kirche St. Maria (Alfred Delp Haus)
+                {{
+                  getContent(
+                    "timeline_1_location",
+                    "Katholische Kirche St. Maria (Alfred Delp Haus)",
+                  )
+                }}
               </p>
-              <p class="text-sm">Berliner Str. 14, 71034 Böblingen</p>
+              <p class="text-sm">
+                {{
+                  getContent(
+                    "timeline_1_address",
+                    "Berliner Str. 14, 71034 Böblingen",
+                  )
+                }}
+              </p>
             </a>
             <p class="text-xs mt-4 opacity-75">
-              2hrs Free parking is around the neighborhood
+              {{
+                getContent(
+                  "timeline_1_note",
+                  "2hrs Free parking is around the neighborhood",
+                )
+              }}
             </p>
           </div>
         </div>
@@ -109,24 +139,50 @@
               </div>
               <div class="w-full h-px bg-[#F6F7EC]/40 my-4"></div>
               <div class="pt-2 px-4">
-                <p class="font-serif text-2xl italic mb-1">16:00 (prompt)</p>
+                <p class="font-serif text-2xl italic mb-1">
+                  {{ getContent("timeline_2_time", "16:00 (prompt)") }}
+                </p>
                 <p class="font-serif text-xl uppercase tracking-widest mb-4">
-                  Church Blessings & Vows
+                  {{
+                    getContent("timeline_2_title", "Church Blessings & Vows")
+                  }}
                 </p>
                 <a
-                  href="https://maps.app.goo.gl/74erQitRL1ZEgh5j8"
+                  :href="
+                    getContent(
+                      'timeline_2_url',
+                      'https://maps.app.goo.gl/74erQitRL1ZEgh5j8',
+                    )
+                  "
                   target="_blank"
                   class="flex flex-col items-center gap-1 opacity-90 hover:opacity-100 hover:text-white transition-colors group"
                 >
                   <p
                     class="font-serif italic text-lg leading-snug group-hover:underline"
                   >
-                    Katholische Kirche St. Maria
+                    {{
+                      getContent(
+                        "timeline_2_location",
+                        "Katholische Kirche St. Maria",
+                      )
+                    }}
                   </p>
-                  <p class="text-sm">Berliner Str. 14, 71034 Böblingen</p>
+                  <p class="text-sm">
+                    {{
+                      getContent(
+                        "timeline_2_address",
+                        "Berliner Str. 14, 71034 Böblingen",
+                      )
+                    }}
+                  </p>
                 </a>
                 <p class="text-xs mt-4 opacity-75">
-                  2hrs Free parking is around the neighborhood
+                  {{
+                    getContent(
+                      "timeline_2_note",
+                      "2hrs Free parking is around the neighborhood",
+                    )
+                  }}
                 </p>
               </div>
             </div>
@@ -142,24 +198,47 @@
               </div>
               <div class="w-full h-px bg-[#F6F7EC]/40 my-4"></div>
               <div class="pt-2 px-4">
-                <p class="font-serif text-2xl italic mb-1">19:00</p>
+                <p class="font-serif text-2xl italic mb-1">
+                  {{ getContent("timeline_3_time", "19:00") }}
+                </p>
                 <p class="font-serif text-xl uppercase tracking-widest mb-4">
-                  Reception & Celebration
+                  {{
+                    getContent("timeline_3_title", "Reception & Celebration")
+                  }}
                 </p>
                 <a
-                  href="https://maps.app.goo.gl/zf3xpVabHPf4RXin9"
+                  :href="
+                    getContent(
+                      'timeline_3_url',
+                      'https://maps.app.goo.gl/zf3xpVabHPf4RXin9',
+                    )
+                  "
                   target="_blank"
                   class="flex flex-col items-center gap-1 opacity-90 hover:opacity-100 hover:text-white transition-colors group"
                 >
                   <p
                     class="font-serif italic text-lg leading-snug group-hover:underline"
                   >
-                    Melodi Event Centre
+                    {{
+                      getContent("timeline_3_location", "Melodi Event Centre")
+                    }}
                   </p>
-                  <p class="text-sm">Dornierstraße 14, 71034 Böblingen</p>
+                  <p class="text-sm">
+                    {{
+                      getContent(
+                        "timeline_3_address",
+                        "Dornierstraße 14, 71034 Böblingen",
+                      )
+                    }}
+                  </p>
                 </a>
                 <p class="text-xs mt-4 opacity-75">
-                  Cocktail 19:00, Event start 20:00
+                  {{
+                    getContent(
+                      "timeline_3_note",
+                      "Cocktail 19:00, Event start 20:00",
+                    )
+                  }}
                 </p>
               </div>
             </div>
@@ -189,24 +268,43 @@
 
           <!-- Event Details -->
           <div class="pt-2 px-4">
-            <p class="font-serif text-2xl italic mb-1">13:00</p>
+            <p class="font-serif text-2xl italic mb-1">
+              {{ getContent("timeline_4_time", "13:00") }}
+            </p>
             <p class="font-serif text-xl uppercase tracking-widest mb-4">
-              After Party Grill (BBQ)
+              {{ getContent("timeline_4_title", "After Party Grill (BBQ)") }}
             </p>
             <a
-              href="https://maps.app.goo.gl/uCHfcaWud9eFMMFt8"
+              :href="
+                getContent(
+                  'timeline_4_url',
+                  'https://maps.app.goo.gl/uCHfcaWud9eFMMFt8',
+                )
+              "
               target="_blank"
               class="flex flex-col items-center gap-1 opacity-90 hover:opacity-100 hover:text-[#A87D3B] transition-colors group"
             >
               <p
                 class="font-serif italic text-lg leading-snug group-hover:underline"
               >
-                Häfele-Hütte
+                {{ getContent("timeline_4_location", "Häfele-Hütte") }}
               </p>
-              <p class="text-sm">Friedhofstraße 27, 72202 Nagold</p>
+              <p class="text-sm">
+                {{
+                  getContent(
+                    "timeline_4_address",
+                    "Friedhofstraße 27, 72202 Nagold",
+                  )
+                }}
+              </p>
             </a>
             <p class="text-xs mt-4 opacity-75">
-              20mins drive from event location
+              {{
+                getContent(
+                  "timeline_4_note",
+                  "20mins drive from event location",
+                )
+              }}
             </p>
           </div>
         </div>
