@@ -15,7 +15,7 @@ export const useSiteContent = () => {
     // Transform array of {key, value} into a key-value object
     const contentMap: Record<string, any> = {};
     if (data) {
-      data.forEach((item) => {
+      data.forEach((item: any) => {
         contentMap[item.key] = item.value;
       });
     }

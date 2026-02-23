@@ -172,8 +172,8 @@ const addArrayItem = (item: any) => {
   item.value.push("");
 };
 
-const removeArrayItem = (item: any, index: number) => {
-  item.value.splice(index, 1);
+const removeArrayItem = (item: any, index: number | string) => {
+  item.value.splice(Number(index), 1);
 };
 
 const handleImageUpload = (event: Event, item: any) => {
@@ -210,8 +210,7 @@ const saveContent = async (item: any) => {
       delete pendingImageFiles.value[item.key];
     }
 
-    const { error: dbError } = await supabase
-      .from("site_content")
+    const { error: dbError } = await (supabase.from("site_content") as any)
       .update({ value: finalValue, updated_at: new Date().toISOString() })
       .eq("key", item.key);
 
