@@ -5,6 +5,7 @@ import FlyerFooter from "./sections/FlyerFooter.vue";
 import FlyerTimeline from "./sections/FlyerTimeline.vue";
 import FlyerAccommodations from "./sections/FlyerAccommodations.vue";
 import FlyerRSVP from "./sections/FlyerRSVP.vue";
+import FlyerBridalParty from "./sections/FlyerBridalParty.vue";
 import FlyerDivider from "./sections/FlyerDivider.vue";
 </script>
 
@@ -81,8 +82,12 @@ import FlyerDivider from "./sections/FlyerDivider.vue";
       <FlyerTimeline class="w-screen max-w-none -mx-[calc(50vw-50%)]" />
       <FlyerAccommodations class="w-screen max-w-none -mx-[calc(50vw-50%)]" />
 
-      <FlyerDivider />
       <FlyerRSVP class="w-screen max-w-none -mx-[calc(50vw-50%)] mb-16" />
+
+      <!-- Bridal Party Phase 2 Addition -->
+      <FlyerBridalParty class="w-screen max-w-none -mx-[calc(50vw-50%)]" />
+
+      <FlyerDivider />
 
       <FlyerFooter />
     </div>
