@@ -43,6 +43,21 @@ const { getContent } = useSiteContent();
         }}
       </p>
     </div>
+
+    <!-- Dress Code -->
+    <div class="mt-8 flex flex-col items-center gap-2">
+      <p
+        class="font-serif text-[#152146]/60 text-xs uppercase tracking-[0.3em]"
+      >
+        Dress Code
+      </p>
+      <p
+        class="font-serif text-[#152146] text-lg md:text-xl tracking-wider font-semibold"
+      >
+        {{ getContent("dress_code", "Formal / Semi-Formal") }}
+      </p>
+      <div class="w-16 h-[1px] bg-[#A87D3B]/40 mt-1"></div>
+    </div>
   </div>
 </template>
 
