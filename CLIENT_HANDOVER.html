@@ -1,0 +1,784 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zelda & Hycenth – Wedding Website Handover</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap");
+
+      :root {
+        --navy: #152146;
+        --gold: #a87d3b;
+        --cream: #f6f7ec;
+        --white: #ffffff;
+        --gray-50: #f9fafb;
+        --gray-100: #f3f4f6;
+        --gray-200: #e5e7eb;
+        --gray-400: #9ca3af;
+        --gray-600: #4b5563;
+        --gray-700: #374151;
+        --gray-900: #111827;
+        --red-600: #dc2626;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        color: var(--gray-900);
+        background: var(--white);
+        line-height: 1.7;
+        font-size: 14px;
+      }
+
+      @media print {
+        body {
+          font-size: 12px;
+        }
+        .page-break {
+          page-break-before: always;
+        }
+        .no-print {
+          display: none;
+        }
+      }
+
+      /* ── Cover Page ────────────────────────────────── */
+      .cover {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(160deg, var(--navy) 0%, #1e3a6e 100%);
+        color: var(--white);
+        text-align: center;
+        padding: 60px 40px;
+      }
+
+      .cover-monogram {
+        width: 100px;
+        height: 100px;
+        border: 3px solid var(--gold);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Playfair Display", serif;
+        font-size: 38px;
+        color: var(--gold);
+        margin-bottom: 40px;
+        letter-spacing: 4px;
+      }
+
+      .cover h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        letter-spacing: 1px;
+      }
+
+      .cover .subtitle {
+        font-size: 16px;
+        font-weight: 300;
+        color: var(--gold);
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 50px;
+      }
+
+      .cover .meta {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.6);
+        line-height: 2;
+      }
+
+      .cover .meta strong {
+        color: rgba(255, 255, 255, 0.85);
+      }
+
+      .gold-divider {
+        width: 80px;
+        height: 2px;
+        background: var(--gold);
+        margin: 30px auto;
+      }
+
+      /* ── Content Pages ─────────────────────────────── */
+      .content {
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 50px 40px;
+      }
+
+      h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 26px;
+        color: var(--navy);
+        margin-bottom: 6px;
+      }
+
+      h2 .section-number {
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--gold);
+        display: block;
+        margin-bottom: 4px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+
+      h3 {
+        font-size: 17px;
+        font-weight: 600;
+        color: var(--navy);
+        margin-top: 30px;
+        margin-bottom: 10px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid var(--gray-200);
+      }
+
+      p,
+      li {
+        color: var(--gray-700);
+        margin-bottom: 8px;
+      }
+
+      .section-intro {
+        font-size: 14px;
+        color: var(--gray-600);
+        margin-bottom: 28px;
+        border-left: 3px solid var(--gold);
+        padding-left: 16px;
+      }
+
+      /* ── Credential Cards ──────────────────────────── */
+      .credential-card {
+        background: var(--gray-50);
+        border: 1px solid var(--gray-200);
+        border-radius: 10px;
+        padding: 24px 28px;
+        margin-bottom: 22px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .credential-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: var(--gold);
+      }
+
+      .credential-card h4 {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--navy);
+        margin-bottom: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .credential-card h4 .icon {
+        width: 24px;
+        height: 24px;
+        background: var(--navy);
+        border-radius: 6px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--gold);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .credential-row {
+        display: flex;
+        align-items: baseline;
+        margin-bottom: 8px;
+        gap: 12px;
+      }
+
+      .credential-label {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--gray-400);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        min-width: 90px;
+        flex-shrink: 0;
+      }
+
+      .credential-value {
+        font-family:
+          "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+        font-size: 14px;
+        color: var(--gray-900);
+        background: var(--white);
+        padding: 4px 10px;
+        border-radius: 5px;
+        border: 1px solid var(--gray-200);
+        word-break: break-all;
+      }
+
+      /* ── Steps List ─────────────────────────────────── */
+      .steps-list {
+        counter-reset: step;
+        list-style: none;
+        padding: 0;
+      }
+
+      .steps-list li {
+        counter-increment: step;
+        padding: 12px 0 12px 50px;
+        position: relative;
+        border-bottom: 1px solid var(--gray-100);
+      }
+
+      .steps-list li:last-child {
+        border-bottom: none;
+      }
+
+      .steps-list li::before {
+        content: counter(step);
+        position: absolute;
+        left: 0;
+        top: 12px;
+        width: 32px;
+        height: 32px;
+        background: var(--navy);
+        color: var(--gold);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .steps-list li strong {
+        color: var(--navy);
+      }
+
+      /* ── Warning / Info Boxes ──────────────────────── */
+      .warning-box {
+        background: #fef2f2;
+        border: 1px solid #fecaca;
+        border-radius: 8px;
+        padding: 16px 20px;
+        margin: 20px 0;
+        font-size: 13px;
+        color: #991b1b;
+      }
+
+      .warning-box strong {
+        display: block;
+        margin-bottom: 4px;
+        color: var(--red-600);
+      }
+
+      .info-box {
+        background: #eff6ff;
+        border: 1px solid #bfdbfe;
+        border-radius: 8px;
+        padding: 16px 20px;
+        margin: 20px 0;
+        font-size: 13px;
+        color: #1e40af;
+      }
+
+      .info-box strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      /* ── Table of Contents ─────────────────────────── */
+      .toc {
+        list-style: none;
+        padding: 0;
+      }
+
+      .toc li {
+        padding: 10px 0;
+        border-bottom: 1px dotted var(--gray-200);
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .toc li span:first-child {
+        font-weight: 500;
+        color: var(--navy);
+      }
+
+      .toc li span:last-child {
+        color: var(--gold);
+        font-weight: 600;
+      }
+
+      /* ── Footer ────────────────────────────────────── */
+      .doc-footer {
+        text-align: center;
+        padding: 40px;
+        color: var(--gray-400);
+        font-size: 12px;
+        border-top: 1px solid var(--gray-200);
+        margin-top: 40px;
+      }
+
+      .print-btn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: var(--navy);
+        color: var(--white);
+        border: none;
+        padding: 14px 28px;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 4px 20px rgba(21, 33, 70, 0.3);
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        z-index: 100;
+      }
+
+      .print-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 25px rgba(21, 33, 70, 0.4);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Print / Save as PDF Button -->
+    <button class="print-btn no-print" onclick="window.print()">
+      📄 Save as PDF
+    </button>
+
+    <!-- ═══════════ COVER PAGE ═══════════ -->
+    <div class="cover">
+      <div class="cover-monogram">Z&H</div>
+      <h1>Zelda & Hycenth</h1>
+      <p class="subtitle">Wedding Website</p>
+      <div class="gold-divider"></div>
+      <p class="subtitle" style="font-size: 14px; letter-spacing: 2px">
+        Client Handover Document
+      </p>
+      <div class="meta">
+        <strong>Document Date:</strong> February 25, 2026<br />
+        <strong>Website:</strong> zeldaandhycenth.com<br />
+        <strong>Confidential</strong> — Contains login credentials
+      </div>
+    </div>
+
+    <!-- ═══════════ TABLE OF CONTENTS ═══════════ -->
+    <div class="content page-break">
+      <h2><span class="section-number">Contents</span>Table of Contents</h2>
+      <div class="gold-divider" style="margin-left: 0"></div>
+      <ul class="toc">
+        <li><span>1. Hostinger Hosting Account</span> <span>→</span></li>
+        <li>
+          <span>2. Admin Dashboard — Credentials & Guide</span> <span>→</span>
+        </li>
+        <li><span>3. Source Code Access (GitHub)</span> <span>→</span></li>
+        <li>
+          <span>4. Supabase Database (Sign in with GitHub)</span> <span>→</span>
+        </li>
+        <li><span>5. Important Notes & Security</span> <span>→</span></li>
+      </ul>
+    </div>
+
+    <!-- ═══════════ SECTION 1: HOSTINGER ═══════════ -->
+    <div class="content page-break">
+      <h2>
+        <span class="section-number">Section 01</span>Hostinger Hosting Account
+      </h2>
+      <p class="section-intro">
+        Your website is hosted on Hostinger. Use these credentials to manage
+        your hosting, domain, email, and billing.
+      </p>
+
+      <div class="credential-card">
+        <h4><span class="icon">H</span> Hostinger Login</h4>
+        <div class="credential-row">
+          <span class="credential-label">Login URL</span>
+          <span class="credential-value">https://hpanel.hostinger.com</span>
+        </div>
+        <div class="credential-row">
+          <span class="credential-label">Email</span>
+          <span class="credential-value">tzelda962@gmail.com</span>
+        </div>
+        <div class="credential-row">
+          <span class="credential-label">Password</span>
+          <span class="credential-value">Tzelda962$$&2026</span>
+        </div>
+      </div>
+
+      <h3>What You Can Do on Hostinger</h3>
+      <ul class="steps-list">
+        <li>
+          <strong>Manage your domain</strong> — Renew your domain name
+          <em>zeldaandhycenth.com</em>, update DNS settings, or set up custom
+          email addresses.
+        </li>
+        <li>
+          <strong>Manage billing & renewal</strong> — View your hosting plan,
+          update payment methods, and set up auto-renewal to keep your website
+          live.
+        </li>
+        <li>
+          <strong>View website analytics</strong> — See visitor statistics and
+          bandwidth usage from the Hostinger dashboard.
+        </li>
+        <li>
+          <strong>Access file manager</strong> — Upload or manage files directly
+          on the server if needed.
+        </li>
+      </ul>
+
+      <div class="info-box">
+        <strong>💡 Tip</strong>
+        Make sure your hosting plan stays active. If it expires, the website
+        will go offline. Enable auto-renewal to be safe.
+      </div>
+    </div>
+
+    <!-- ═══════════ SECTION 2: ADMIN DASHBOARD ═══════════ -->
+    <div class="content page-break">
+      <h2><span class="section-number">Section 02</span>Admin Dashboard</h2>
+      <p class="section-intro">
+        The admin dashboard lets you update the wedding invitation content —
+        text, images, and bridal party members — without touching any code.
+      </p>
+
+      <div class="credential-card">
+        <h4><span class="icon">A</span> Admin Dashboard Login</h4>
+        <div class="credential-row">
+          <span class="credential-label">Login URL</span>
+          <span class="credential-value"
+            >https://zeldaandhycenth.com/admin</span
+          >
+        </div>
+        <div class="credential-row">
+          <span class="credential-label">Email</span>
+          <span class="credential-value">admin@wedding.com</span>
+        </div>
+        <div class="credential-row">
+          <span class="credential-label">Password</span>
+          <span class="credential-value">AdminPassword123!</span>
+        </div>
+      </div>
+
+      <h3>How to Log In</h3>
+      <ul class="steps-list">
+        <li>
+          Open your browser and go to
+          <strong>zeldaandhycenth.com/admin</strong>. You will be redirected to
+          the login page.
+        </li>
+        <li>
+          Enter the <strong>Email</strong> and
+          <strong>Password</strong> provided above.
+        </li>
+        <li>
+          Click <strong>"Sign In"</strong>. You will be taken to the Content
+          Management dashboard.
+        </li>
+      </ul>
+
+      <h3>How to Edit Text Content</h3>
+      <ul class="steps-list">
+        <li>
+          On the dashboard, you will see a list of all editable content items,
+          each with a label (e.g. "Couple Names", "Church Location", "Reception
+          Venue").
+        </li>
+        <li>
+          Click into the <strong>text field</strong> or
+          <strong>text area</strong> next to the label and update the text as
+          needed. Short values use a single-line input; longer values use a
+          multi-line text area.
+        </li>
+        <li>
+          Click the <strong>"Save Changes"</strong> button below that specific
+          item. A green <em>"Successfully saved!"</em> message will confirm the
+          change.
+        </li>
+        <li>
+          Refresh the wedding website (<strong>zeldaandhycenth.com</strong>) to
+          see your changes live.
+        </li>
+      </ul>
+
+      <h3>How to Update Images</h3>
+      <ul class="steps-list">
+        <li>
+          Items that begin with <strong>"image_"</strong> show a preview
+          thumbnail of the current image on the left.
+        </li>
+        <li>
+          Click <strong>"Choose File"</strong> and select a new image from your
+          computer.
+        </li>
+        <li>
+          Click <strong>"Save Changes"</strong>. The image will be uploaded and
+          the preview will update automatically.
+        </li>
+      </ul>
+
+      <h3>How to Edit the Bridal Party</h3>
+      <ul class="steps-list">
+        <li>
+          The <strong>"Groomsmen List"</strong> and
+          <strong>"Bridesmaids List"</strong> sections show each person with
+          their photo, name, and role.
+        </li>
+        <li>
+          To <strong>add</strong> a person, click the
+          <strong>"+ Add person"</strong> button at the bottom of the list.
+        </li>
+        <li>
+          Fill in the <strong>Name</strong> and <strong>Role</strong> fields.
+          Click the <strong>"Upload"</strong> link under the photo circle to add
+          their photo.
+        </li>
+        <li>
+          To <strong>remove</strong> a person, click the
+          <strong>red trash icon</strong> (🗑) next to their entry.
+        </li>
+        <li>
+          After making all changes, click <strong>"Save Changes"</strong> for
+          that section.
+        </li>
+      </ul>
+
+      <h3>How to Sign Out</h3>
+      <ul class="steps-list">
+        <li>
+          Click the <strong>"Sign out"</strong> link in the top-right corner of
+          the dashboard navigation bar. You will be redirected to the login
+          page.
+        </li>
+      </ul>
+
+      <div class="warning-box">
+        <strong>⚠️ Important</strong>
+        Always click "Save Changes" after editing each item. Changes are saved
+        individually per field — unsaved edits will be lost if you navigate
+        away.
+      </div>
+    </div>
+
+    <!-- ═══════════ SECTION 3: GITHUB ═══════════ -->
+    <div class="content page-break">
+      <h2>
+        <span class="section-number">Section 03</span>Source Code Access
+        (GitHub)
+      </h2>
+      <p class="section-intro">
+        The full source code for the wedding website is stored on GitHub. You
+        can access it using your Gmail account.
+      </p>
+
+      <div class="credential-card">
+        <h4><span class="icon">G</span> GitHub Access</h4>
+        <div class="credential-row">
+          <span class="credential-label">Login URL</span>
+          <span class="credential-value">https://github.com</span>
+        </div>
+        <div class="credential-row">
+          <span class="credential-label">Sign-In Method</span>
+          <span class="credential-value">Sign in with Google (Gmail)</span>
+        </div>
+        <div class="credential-row">
+          <span class="credential-label">Gmail Account</span>
+          <span class="credential-value">tzelda962@gmail.com</span>
+        </div>
+        <div class="credential-row">
+          <span class="credential-label">Gmail Password</span>
+          <span class="credential-value">Tzelda962$$&2026</span>
+        </div>
+      </div>
+
+      <h3>How to Access the Code</h3>
+      <ul class="steps-list">
+        <li>
+          Go to <strong>github.com</strong> and click
+          <strong>"Sign in"</strong>.
+        </li>
+        <li>
+          Click <strong>"Sign in with Google"</strong> and use the Gmail account
+          listed above.
+        </li>
+        <li>
+          Once signed in, navigate to your repositories to find the wedding
+          website project.
+        </li>
+      </ul>
+
+      <div class="info-box">
+        <strong>💡 Note</strong>
+        The source code is primarily useful if a developer needs to make
+        structural or design changes to the website in the future. For content
+        changes (text, images, bridal party), always use the Admin Dashboard.
+      </div>
+    </div>
+
+    <!-- ═══════════ SECTION 4: SUPABASE ═══════════ -->
+    <div class="content page-break">
+      <h2><span class="section-number">Section 04</span>Supabase Database</h2>
+      <p class="section-intro">
+        Supabase is the backend database that powers the wedding website. It
+        stores all your content, images, and RSVP data. You sign in using your
+        GitHub account.
+      </p>
+
+      <div class="credential-card">
+        <h4><span class="icon">S</span> Supabase Login</h4>
+        <div class="credential-row">
+          <span class="credential-label">Login URL</span>
+          <span class="credential-value">https://supabase.com/dashboard</span>
+        </div>
+        <div class="credential-row">
+          <span class="credential-label">Sign-In Method</span>
+          <span class="credential-value">Sign in with GitHub</span>
+        </div>
+      </div>
+
+      <div class="warning-box">
+        <strong>⚠️ Prerequisite</strong>
+        You must be signed in to GitHub first (see Section 3) before you can
+        access Supabase. Supabase uses your GitHub account for authentication.
+      </div>
+
+      <h3>How to Sign In</h3>
+      <ul class="steps-list">
+        <li>
+          First, make sure you are <strong>signed in to GitHub</strong> in your
+          browser using your Gmail account (<em>tzelda962@gmail.com</em>) — see
+          Section 3.
+        </li>
+        <li>
+          Go to <strong>supabase.com/dashboard</strong> and click
+          <strong>"Sign in with GitHub"</strong>.
+        </li>
+        <li>
+          GitHub will ask you to authorize Supabase. Click
+          <strong>"Authorize"</strong> if prompted.
+        </li>
+        <li>
+          You will be taken to the Supabase dashboard where you can see your
+          wedding website project.
+        </li>
+      </ul>
+
+      <h3>What You Can Do on Supabase</h3>
+      <ul class="steps-list">
+        <li>
+          <strong>View & manage data</strong> — Open the
+          <strong>Table Editor</strong> to see all your site content, RSVP
+          responses, and bridal party data.
+        </li>
+        <li>
+          <strong>Manage storage</strong> — Under the
+          <strong>Storage</strong> section, you can view all uploaded images
+          (bridal party photos, couple photos, etc.).
+        </li>
+        <li>
+          <strong>Manage admin users</strong> — Under
+          <strong>Authentication → Users</strong>, you can change the admin
+          dashboard password for the <em>admin@wedding.com</em> account.
+        </li>
+      </ul>
+
+      <div class="info-box">
+        <strong>💡 Tip</strong>
+        For day-to-day content changes, use the Admin Dashboard (Section 2). You
+        only need Supabase for advanced tasks like changing the admin password
+        or viewing raw data.
+      </div>
+    </div>
+
+    <!-- ═══════════ SECTION 5: SECURITY NOTES ═══════════ -->
+    <div class="content page-break">
+      <h2>
+        <span class="section-number">Section 05</span>Important Notes & Security
+      </h2>
+      <p class="section-intro">
+        Please keep this document safe. It contains all the credentials needed
+        to manage your wedding website.
+      </p>
+
+      <h3>Security Recommendations</h3>
+      <ul class="steps-list">
+        <li>
+          <strong>Store this document securely.</strong> Keep it in a
+          password-protected location or a physical safe. Do not share it
+          publicly.
+        </li>
+        <li>
+          <strong>Change your passwords</strong> after receiving this document.
+          Update the Hostinger password and the admin dashboard password to
+          something only you know.
+        </li>
+        <li>
+          <strong>To change the admin password:</strong> Log in to Supabase (see
+          Section 4) → navigate to <strong>Authentication → Users</strong> →
+          find <em>admin@wedding.com</em> → update the password.
+        </li>
+        <li>
+          <strong>Enable two-factor authentication (2FA)</strong> on your
+          Hostinger and Gmail accounts for added security.
+        </li>
+        <li>
+          <strong>Keep your hosting plan renewed</strong> to prevent the website
+          from going offline.
+        </li>
+      </ul>
+
+      <div class="warning-box">
+        <strong>⚠️ Credential Summary</strong>
+        This document contains 4 sets of credentials:<br />
+        <span style="margin-left: 10px"
+          >1. Hostinger (hosting & domain management)</span
+        ><br />
+        <span style="margin-left: 10px"
+          >2. Admin Dashboard (website content management)</span
+        ><br />
+        <span style="margin-left: 10px"
+          >3. GitHub via Gmail (source code access)</span
+        ><br />
+        <span style="margin-left: 10px"
+          >4. Supabase via GitHub (database management)</span
+        ><br /><br />
+        Treat all credentials as confidential.
+      </div>
+
+      <h3>Need Help?</h3>
+      <p>
+        If you encounter any issues or need further changes to the website that
+        cannot be done through the admin dashboard, please contact your
+        developer for assistance.
+      </p>
+    </div>
+
+    <!-- ═══════════ FOOTER ═══════════ -->
+    <div class="doc-footer">
+      <div class="gold-divider"></div>
+      <p>Zelda & Hycenth Wedding Website — Client Handover Document</p>
+      <p>Prepared on February 25, 2026 • Confidential</p>
+    </div>
+  </body>
+</html>

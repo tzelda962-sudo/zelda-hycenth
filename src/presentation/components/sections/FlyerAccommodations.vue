@@ -133,6 +133,22 @@ const { getContent } = useSiteContent();
                 }}</a
               >
             </p>
+            <p class="pt-2">
+              <span class="font-bold">Closest Landing airport:</span>
+              <a
+                :href="
+                  getContent(
+                    'accommodation_airport_url',
+                    'https://share.google/t3O1Z9IbWPgnyQ0ln',
+                  )
+                "
+                target="_blank"
+                class="hover:underline hover:text-[#A87D3B] transition-colors"
+                >{{
+                  getContent("accommodation_airport_name", "Stuttgart Airport")
+                }}</a
+              >
+            </p>
           </div>
         </div>
 
