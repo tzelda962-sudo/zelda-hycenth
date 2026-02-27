@@ -133,7 +133,7 @@ const { getContent } = useSiteContent();
                 }}</a
               >
             </p>
-            <p class="pt-2">
+            <p class="pt-2 flex flex-wrap items-center gap-x-2">
               <span class="font-bold">Closest Landing airport:</span>
               <a
                 :href="
@@ -143,11 +143,25 @@ const { getContent } = useSiteContent();
                   )
                 "
                 target="_blank"
-                class="hover:underline hover:text-[#A87D3B] transition-colors"
+                class="font-bold text-[#A87D3B] hover:text-[#152146] transition-colors underline decoration-dotted inline-flex items-center gap-1"
                 >{{
                   getContent("accommodation_airport_name", "Stuttgart Airport")
-                }}</a
-              >
+                }}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2.5"
+                  stroke="currentColor"
+                  class="w-4 h-4 inline-block"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                  />
+                </svg>
+              </a>
             </p>
           </div>
         </div>
