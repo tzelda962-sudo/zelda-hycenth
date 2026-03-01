@@ -43,7 +43,12 @@ const { getContent } = useSiteContent();
           <!-- Header -->
           <div class="h-24 flex items-center justify-center">
             <h4 class="font-serif text-2xl md:text-3xl italic leading-tight">
-              Friday<br /><span class="not-italic font-bold">11.09</span>
+              {{ getContent("timeline_day_1_name", "Friday") }}<br /><span
+                class="not-italic font-bold"
+                >{{
+                  getContent("timeline_day_1_date", "11th Sept. 2026")
+                }}</span
+              >
             </h4>
           </div>
 
@@ -117,7 +122,12 @@ const { getContent } = useSiteContent();
           <!-- Header -->
           <div class="h-24 flex items-center justify-center">
             <h4 class="font-serif text-2xl md:text-3xl italic leading-tight">
-              Saturday<br /><span class="not-italic font-bold">12.09</span>
+              {{ getContent("timeline_day_2_name", "Saturday") }}<br /><span
+                class="not-italic font-bold"
+                >{{
+                  getContent("timeline_day_2_date", "12th Sept. 2026")
+                }}</span
+              >
             </h4>
           </div>
 
@@ -250,7 +260,12 @@ const { getContent } = useSiteContent();
           <!-- Header -->
           <div class="h-24 flex items-center justify-center">
             <h4 class="font-serif text-2xl md:text-3xl italic leading-tight">
-              Sunday<br /><span class="not-italic font-bold">13.09</span>
+              {{ getContent("timeline_day_3_name", "Sunday") }}<br /><span
+                class="not-italic font-bold"
+                >{{
+                  getContent("timeline_day_3_date", "13th Sept. 2026")
+                }}</span
+              >
             </h4>
           </div>
 
