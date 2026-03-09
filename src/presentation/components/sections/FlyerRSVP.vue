@@ -26,6 +26,19 @@ const { getContent } = useSiteContent();
           )
         }}
       </p>
+      <p
+        class="text-base md:text-lg mb-8 max-w-2xl mx-auto text-[#152146] font-medium"
+      >
+        <span class="font-bold underline"
+          >{{ getContent("rsvp_note_kids_label", "Reception & Gala") }}:</span
+        >
+        {{
+          getContent(
+            "rsvp_note_kids_message",
+            "As seating is limited, we kindly request that guests attend without kids. Please notify the host in advance if this is unavoidable",
+          )
+        }}
+      </p>
       <a
         :href="
           getContent('rsvp_link_url', 'https://forms.gle/Gf8Mvt7DMgfpYNLBA')
